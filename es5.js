@@ -16,20 +16,25 @@ function animalListing( animalArray, listFoods){
 	}
 	var outputArray = [];
 	for(var animalIndex = 0; animalIndex< animalArray.length; animalIndex++){
-		var thisAnimal = animalArray[animalIndex];
-		var name = thisAnimal.name;
-		var height = thisAnimal.height;
-		var weight = thisAnimal.weight;
-		var type = thisAnimal.type;
-		var foods = thisAnimal.top3Foods;
-		var food1 = foods[0];
-		var food2 = foods[1];
-		var food3 = foods[2];
+
+		// var thisAnimal = animalArray[animalIndex];
+		var {name, height, weight, type, top3Foods} = animalArray[animalIndex];
+		var [food1, food2, food3] = top3Foods;
+		// var name = thisAnimal.name;
+		// var height = thisAnimal.height;
+		// var weight = thisAnimal.weight;
+		// var type = thisAnimal.type;
+		// var foods = thisAnimal.top3Foods;
+		// var food1 = foods[0];
+		// var food2 = foods[1];
+		// var food3 = foods[2];
+
+		console.log(food1);
 		var sentence = "Animal: "+name+" is a "+type+" and is "+height+" meters at "+(weight*2.2)+" lbs";
 		console.log(sentence);
 		if(listFoods){
 			sentence += " and it likes to eat "+food1+", "+food2+", and "+food3;
-			console.log(foodSentence)
+			console.log(sentence)
 		}
 	}
 	return outputArray;
